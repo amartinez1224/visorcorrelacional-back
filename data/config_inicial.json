@@ -3,7 +3,7 @@
         "region": {"divipola": "00000"},
         "variable": {"anio": 2020, "value": "rate_cienmilhab", "bd": "BD_16_RMM"}
     },
-    "Coordenadas_paralelas": {
+    "coordenadas_paralelas": {
         "regiones": [
             {"divipola": "76000"},
             {"divipola": "76109"},

@@ -42,6 +42,7 @@ router.get('/lista', (req, res) => {
 router.get('/resumen', (req, res) => {
   const resumen = variables.map((variable) => ({
     bd: variable.bd,
+    value: variable.value,
     nombre: variable.nombre,
     anios: variable.anios,
   }
@@ -52,6 +53,7 @@ router.get('/resumen', (req, res) => {
 router.get('/brechas', (req, res) => {
   const resumen = variables.map((variable) => ({
     bd: variable.bd,
+    value: variable.value,
     nombre: variable.nombre,
     anios: variable.anios,
     brechas: variable.brechas.map((brecha) => brecha.nombre),
@@ -77,6 +79,14 @@ router.get('/anios', (req, res) => {
 
 router.get('/iniciales', (req, res) => {
   res.send(iniciales);
+});
+
+router.get('/iniciales/brechas', (req, res) => {
+  res.send(iniciales.brechas);
+});
+
+router.get('/iniciales/coordenadas_paralelas', (req, res) => {
+  res.send(iniciales.coordenadas_paralelas);
 });
 
 module.exports = {
