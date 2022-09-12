@@ -1,0 +1,955 @@
+[
+    {
+        "base_de_datos": "BD_28_ANA",
+        "feature_servers": {
+            "departamentos": "3",
+            "municipios": "4",
+            "PDET": "5"
+        },
+        "anios": [
+            2018
+        ],
+        "variables": [
+            {
+                "value": "rate_illiteracy",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 100,
+                "titulos": [
+                    "Bajo analfabetismo",
+                    "Analfabetismo medio",
+                    "Alto analfabetismo"
+                ],
+                "descripciones": [
+                    "Requiere fortalecer los modelos de alfabetización para poder reducir el analfabetismo funcional y así lograr que sus habitantes desarrollen de manera integral sus habilidades para leer y escribir, y avanzar en el cierre de brechas en términos de alfabetización.",
+                    "Requiere fortalecer los procesos de caracterización de la población, para determinar las necesidades que existen por parte de grupos poblacionales específicos y así implementar estrategias focalizadas de alfabetización.",
+                    "Requiere direccionar los esfuerzos y estrategias a la atención de la población mayor a 15 años que presente esta condición. Implica la disminución del ausentismo escolar, principalmente en los primeros grados educativos, lo que facilitará la generación de competencias en lectoescritura por parte de la población."
+                ],
+                "descripcion": "El analfabetismo se define como la ausencia de competencias para poder leer y escribir, y su incidencia se mide a través de la tasa de analfabetismo, la cual corresponde al porcentaje de la población que no sabe leer ni escribir, ni puede comprender un texto sencillo y corto sobre su vida cotidiana (MEN, 2013).",
+                "fuente": "CNPV 2018.",
+                "nombre": "Tasa de analfabetismo",
+                "limites": [
+                    7.5,
+                    10.5
+                ],
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": "%"
+            }
+        ]
+    },
+    {
+        "base_de_datos": "BD_25_CNE",
+        "feature_servers": {
+            "departamentos": "3",
+            "municipios": "5",
+            "PDET": "4"
+        },
+        "anios": [
+            2019
+        ],
+        "variables": [
+            {
+                "value": "transition_net_coverage",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 100,
+                "titulos": [
+                    "Alta cobertura",
+                    "Media cobertura",
+                    "Baja cobertura"
+                ],
+                "descripciones": [
+                    "Tienen el reto de mantener o ampliar la oferta educativa hasta alcanzar la universalidad en el acceso, al igual que enfocar su política pública en mejorar la calidad educativa por medio del análisis de resultados de las pruebas estandarizadas de los estudiantes del municipio.",
+                    "Tienen el desafío de seguir ampliando su oferta educativa para lograr la universalidad en el acceso. Las autoridades deben caracterizar a aquella población que se queda por fuera del sistema educativo (por ejemplo, la condición socioeconómica según Sisbén y zona geográfica), para así ampliar la oferta educativa de forma específica.",
+                    "Tienen el desafío de ampliar su oferta educativa para cubrir las necesidades de la demanda. Su política pública debe ir enfocada en la creación de cupos educativos por medio de inversión en zonas críticas donde el acceso a cupos puede ser desafiante, como poblaciones más vulnerables y zonas rurales dispersas (si aplica)."
+                ],
+                "descripcion": "El acceso a la educación puede medirse a partir del indicador de cobertura neta, el cual da cuenta de la relación que existe entre el número de estudiantes matriculados en un nivel educativo que tienen la edad teórica para cursarlo y el total de la población correspondiente a esa misma edad en un periodo específico (Ministerio de Educación Nacional, 2013).",
+                "fuente": "Fuente: TerriData - DNP, SIMAT y MEN.",
+                "nombre": "Cobertura educación (transición)",
+                "limites": [
+                    95,
+                    85
+                ],
+                "rango": [
+                    0,
+                    100
+                ],
+                "unidad": "%"
+            },
+            {
+                "value": "primary_net_coverage",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 100,
+                "titulos": [
+                    "Alta cobertura",
+                    "Media cobertura",
+                    "Baja cobertura"
+                ],
+                "descripciones": [
+                    "Tienen el reto de mantener o ampliar la oferta educativa hasta alcanzar la universalidad en el acceso, al igual que enfocar su política pública en mejorar la calidad educativa por medio del análisis de resultados de las pruebas estandarizadas de los estudiantes del municipio.",
+                    "Tienen el desafío de seguir ampliando su oferta educativa para lograr la universalidad en el acceso. Las autoridades deben caracterizar a aquella población que se queda por fuera del sistema educativo (por ejemplo, la condición socioeconómica según Sisbén y zona geográfica), para así ampliar la oferta educativa de forma específica.",
+                    "Tienen el desafío de ampliar su oferta educativa para cubrir las necesidades de la demanda. Su política pública debe ir enfocada en la creación de cupos educativos por medio de inversión en zonas críticas donde el acceso a cupos puede ser desafiante, como poblaciones más vulnerables y zonas rurales dispersas (si aplica)."
+                ],
+                "descripcion": "El acceso a la educación puede medirse a partir del indicador de cobertura neta, el cual da cuenta de la relación que existe entre el número de estudiantes matriculados en un nivel educativo que tienen la edad teórica para cursarlo y el total de la población correspondiente a esa misma edad en un periodo específico (Ministerio de Educación Nacional, 2013).",
+                "fuente": "Fuente: TerriData - DNP, SIMAT y MEN.",
+                "nombre": "Cobertura educación (primaria)",
+                "limites": [
+                    95,
+                    85
+                ],
+                "rango": [
+                    0,
+                    100
+                ],
+                "unidad": "%"
+            },
+            {
+                "value": "middle_net_coverage",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 100,
+                "titulos": [
+                    "Alta cobertura",
+                    "Media cobertura",
+                    "Baja cobertura"
+                ],
+                "descripciones": [
+                    "Tienen el reto de mantener o ampliar la oferta educativa hasta alcanzar la universalidad en el acceso, al igual que enfocar su política pública en mejorar la calidad educativa por medio del análisis de resultados de las pruebas estandarizadas de los estudiantes del municipio.",
+                    "Tienen el desafío de seguir ampliando su oferta educativa para lograr la universalidad en el acceso. Las autoridades deben caracterizar a aquella población que se queda por fuera del sistema educativo (por ejemplo, la condición socioeconómica según Sisbén y zona geográfica), para así ampliar la oferta educativa de forma específica.",
+                    "Tienen el desafío de ampliar su oferta educativa para cubrir las necesidades de la demanda. Su política pública debe ir enfocada en la creación de cupos educativos por medio de inversión en zonas críticas donde el acceso a cupos puede ser desafiante, como poblaciones más vulnerables y zonas rurales dispersas (si aplica)."
+                ],
+                "descripcion": "El acceso a la educación puede medirse a partir del indicador de cobertura neta, el cual da cuenta de la relación que existe entre el número de estudiantes matriculados en un nivel educativo que tienen la edad teórica para cursarlo y el total de la población correspondiente a esa misma edad en un periodo específico (Ministerio de Educación Nacional, 2013).",
+                "fuente": "Fuente: TerriData - DNP, SIMAT y MEN.",
+                "nombre": "Cobertura educación (media)",
+                "limites": [
+                    95,
+                    85
+                ],
+                "rango": [
+                    0,
+                    100
+                ],
+                "unidad": "%"
+            },
+            {
+                "value": "secondary_net_coverage",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 100,
+                "titulos": [
+                    "Alta cobertura",
+                    "Media cobertura",
+                    "Baja cobertura"
+                ],
+                "descripciones": [
+                    "Tienen el reto de mantener o ampliar la oferta educativa hasta alcanzar la universalidad en el acceso, al igual que enfocar su política pública en mejorar la calidad educativa por medio del análisis de resultados de las pruebas estandarizadas de los estudiantes del municipio.",
+                    "Tienen el desafío de seguir ampliando su oferta educativa para lograr la universalidad en el acceso. Las autoridades deben caracterizar a aquella población que se queda por fuera del sistema educativo (por ejemplo, la condición socioeconómica según Sisbén y zona geográfica), para así ampliar la oferta educativa de forma específica.",
+                    "Tienen el desafío de ampliar su oferta educativa para cubrir las necesidades de la demanda. Su política pública debe ir enfocada en la creación de cupos educativos por medio de inversión en zonas críticas donde el acceso a cupos puede ser desafiante, como poblaciones más vulnerables y zonas rurales dispersas (si aplica)."
+                ],
+                "descripcion": "El acceso a la educación puede medirse a partir del indicador de cobertura neta, el cual da cuenta de la relación que existe entre el número de estudiantes matriculados en un nivel educativo que tienen la edad teórica para cursarlo y el total de la población correspondiente a esa misma edad en un periodo específico (Ministerio de Educación Nacional, 2013).",
+                "fuente": "Fuente: TerriData - DNP, SIMAT y MEN.",
+                "nombre": "Cobertura educación (secundaria)",
+                "limites": [
+                    95,
+                    85
+                ],
+                "rango": [
+                    0,
+                    100
+                ],
+                "unidad": "%"
+            },
+            {
+                "value": "total_net_coverage",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 100,
+                "titulos": [
+                    "Alta cobertura",
+                    "Media cobertura",
+                    "Baja cobertura"
+                ],
+                "descripciones": [
+                    "Tienen el reto de mantener o ampliar la oferta educativa hasta alcanzar la universalidad en el acceso, al igual que enfocar su política pública en mejorar la calidad educativa por medio del análisis de resultados de las pruebas estandarizadas de los estudiantes del municipio.",
+                    "Tienen el desafío de seguir ampliando su oferta educativa para lograr la universalidad en el acceso. Las autoridades deben caracterizar a aquella población que se queda por fuera del sistema educativo (por ejemplo, la condición socioeconómica según Sisbén y zona geográfica), para así ampliar la oferta educativa de forma específica.",
+                    "Tienen el desafío de ampliar su oferta educativa para cubrir las necesidades de la demanda. Su política pública debe ir enfocada en la creación de cupos educativos por medio de inversión en zonas críticas donde el acceso a cupos puede ser desafiante, como poblaciones más vulnerables y zonas rurales dispersas (si aplica)."
+                ],
+                "descripcion": "El acceso a la educación puede medirse a partir del indicador de cobertura neta, el cual da cuenta de la relación que existe entre el número de estudiantes matriculados en un nivel educativo que tienen la edad teórica para cursarlo y el total de la población correspondiente a esa misma edad en un periodo específico (Ministerio de Educación Nacional, 2013).",
+                "fuente": "Fuente: TerriData - DNP, SIMAT y MEN.",
+                "nombre": "Cobertura educación (total)",
+                "limites": [
+                    95,
+                    85
+                ],
+                "rango": [
+                    0,
+                    100
+                ],
+                "unidad": "%"
+            }
+        ]
+    },
+    {
+        "base_de_datos": "BD_21_VBG",
+        "feature_servers": {
+            "departamentos": "9",
+            "municipios": "8",
+            "PDET": "7"
+        },
+        "anios": [
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020
+        ],
+        "variables": [
+            {
+                "value": "rate_total_vbg",
+                "mostrarBrechas": true,
+                "brechas": [
+                    {
+                        "nombre": "Etnia",
+                        "categorias": [
+                            {
+                                "value": "indigena",
+                                "nombre": "Indigena"
+                            },
+                            {
+                                "value": "narp",
+                                "nombre": "NARP"
+                            },
+                            {
+                                "value": "ninguno",
+                                "nombre": "Ninguno"
+                            }
+                        ]
+                    },
+                    {
+                        "nombre": "Zona",
+                        "categorias": [
+                            {
+                                "value": "rural",
+                                "nombre": "Rural"
+                            },
+                            {
+                                "value": "urbano",
+                                "nombre": "Urbano"
+                            }
+                        ]
+                    },
+                    {
+                        "nombre": "Edad",
+                        "categorias": [
+                            {
+                                "value": "65_y_mas_anios",
+                                "nombre": "Mayor a 65 Años"
+                            },
+                            {
+                                "value": "50_64_anios",
+                                "nombre": "60-64 Años"
+                            },
+                            {
+                                "value": "504_59_anios",
+                                "nombre": "54-59 Años"
+                            },
+                            {
+                                "value": "50_54_anios",
+                                "nombre": "50-54 Años"
+                            },
+                            {
+                                "value": "45_49_anios",
+                                "nombre": "45-49 Años"
+                            },
+                            {
+                                "value": "40_44_anios",
+                                "nombre": "40-44 Años"
+                            },
+                            {
+                                "value": "35_39_anios",
+                                "nombre": "35-39 Años"
+                            },
+                            {
+                                "value": "30_34_anios",
+                                "nombre": "30-34 Años"
+                            },
+                            {
+                                "value": "25_29_anios",
+                                "nombre": "25-29 Años"
+                            },
+                            {
+                                "value": "20_24_anios",
+                                "nombre": "20-24 Años"
+                            },
+                            {
+                                "value": "15_19_anios",
+                                "nombre": "15-19 Años"
+                            },
+                            {
+                                "value": "10_14_anios",
+                                "nombre": "10-14 Años"
+                            },
+                            {
+                                "value": "5_9_anios",
+                                "nombre": "5-9 Años"
+                            },
+                            {
+                                "value": "0_4_anios",
+                                "nombre": "0-4 Años"
+                            }
+                        ]
+                    }
+                ],
+                "calc": 1,
+                "titulos": [
+                    "Baja tasa de violencia sexual",
+                    "Tasa de violencia sexual media",
+                    "Alta tasa de violencia sexual"
+                ],
+                "descripciones": [
+                    "Fortalecer las medidas de identificación de las violencias sexuales, especialmente aquellas que por lo general se normalizan, como embarazos a temprana edad y matrimonios y uniones tempranas. ",
+                    "Promover estrategias de sensibilización frente a la tolerancia y la justificación de las violencias sexuales, y sobre el fortalecimiento en la corresponsabilidad en la protección de niñas, niños y adolescentes.",
+                    "Fortalecer las estrategias de prevención de las violencias sexuales a través de la identificación y promoción de entornos protectores, la promoción de la sanción social de la violencia y del silencio respecto a las violencias sexuales."
+                ],
+                "descripcion": "Se entiende como violencias basadas en género (VBG) cualquier acción o conducta que se desarrolla a partir de las relaciones de poder asimétricas basadas en el género que sobrevaloran lo relacionado con lo masculino y subvaloran lo relacionado con lo femenino (Sistema Integrado de Información de Violencias de Género [SIVIGE], 2016).",
+                "fuente": "Sistema Nacional de Vigilancia en Salud Pública (SIVIGILA).",
+                "nombre": "Tasa de violencia sexual basada en género",
+                "limites": [
+                    50,
+                    90
+                ],
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": ""
+            }
+        ]
+    },
+    {
+        "base_de_datos": "BD_20_AAN",
+        "feature_servers": {
+            "departamentos": "9",
+            "municipios": "8",
+            "PDET": "7"
+        },
+        "anios": [
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020
+        ],
+        "variables": [
+            {
+                "value": "women_supply_any_contraception",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "Indicadores PEDT por Entidad Territorial, consultados en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "No. de mujeres que reciben métodos anticonceptivos (SGS)",
+                "limites": false,
+                "rango": [
+                    false,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "total_women_15_49_afiliated_sgs",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "Indicadores PEDT por Entidad Territorial, consultados en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "No. de mujeres afiliadas SGS",
+                "limites": false,
+                "rango": [
+                    false,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "percent_women_15_49",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 100,
+                "titulos": [
+                    "Mayor acceso",
+                    "Acceso medio",
+                    "Menor acceso"
+                ],
+                "descripciones": [
+                    "Promover el acceso a educación, información y mecanismos que faciliten las proyecciones de planes de vida de las adolescentes y las mujeres, que les permita tomar la decisión frente a los riesgos e implicaciones de una maternidad a temprana edad. El uso de anticonceptivos debe ser una decisión tanto de hombres como mujeres: todos requieren los medios y la información sobre su uso adecuado.",
+                    "Fortalecer el acceso a métodos anticonceptivos, la educación sexual necesaria para su adecuado uso sobre la base del consentimiento, la autonomía y la construcción de proyectos de vida, que generen centros de interés para las niñas, niños y adolescentes en el marco de los derechos sexuales y reproductivos. ",
+                    "Unir esfuerzos hacia la universalización de la atención de salud sexual y reproductiva en el país, promover el acceso y uso de métodos anticonceptivos modernos, seguros y eficaces, incluida la anticoncepción oral de emergencia (Consenso de Montevideo), así como el uso del condón. Disminuir las necesidades insatisfechas en anticoncepción y la fecundidad no planificada, especialmente en los grupos socialmente más vulnerables."
+                ],
+                "descripcion": "Los descensos en fecundidad y el aumento en el uso de métodos anticonceptivos modernos pueden vincularse a diferentes intervenciones y programas que han facilitado el acceso a los servicios de salud sexual y reproductiva. A pesar de esto, persisten inequidades en el acceso a métodos anticonceptivos. En este caso, los servicios de salud están reportando el total de afiliadas a quienes se les entregan métodos anticonceptivos, y ese dato es comparado con el total de afiliadas al Sistema General de Seguridad Social en Salud (SGSSS). La fuente del reporte no tiene en cuenta las adquisiciones particulares.",
+                "fuente": "Indicadores PEDT por Entidad Territorial, consultados en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "Porcentaje de mujeres con suministro de métodos anticonceptivos",
+                "limites": [
+                    50,
+                    25
+                ],
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": "%"
+            }
+        ]
+    },
+    {
+        "base_de_datos": "BD_18_TEF",
+        "feature_servers": {
+            "departamentos": "9",
+            "municipios": "10",
+            "PDET": "11"
+        },
+        "anios": [
+            2008,
+            2009,
+            2010,
+            2011,
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019
+        ],
+        "variables": [
+            {
+                "value": "births_teenagers_15_19",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "Estadísticas vitales, consultadas en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "No. de nacimientos (15-19 años)",
+                "limites": false,
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "number_teenagers_15",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "Estadísticas vitales, consultadas en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "No. de jóvenes (15-19 años)",
+                "limites": false,
+                "rango": [
+                    false,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "rate_tef_teenagers_15_19",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 1,
+                "titulos": [
+                    "Baja fecundidad temprana",
+                    "Media fecundidad temprana",
+                    "Alta fecundidad temprana"
+                ],
+                "descripciones": [
+                    "Continuar fortaleciendo el acceso a servicios de salud en derechos sexuales y reproductivos.",
+                    "Garantizar el acceso a anticonceptivos a adolescentes que voluntariamente lo soliciten, sin barreras de acceso.",
+                    "Fortalecer todas las acciones en términos de salud sexual y reproductiva para lograr uno de los objetivos del PND y los ODS: disminuir la TEF de 15 a 19 años."
+                ],
+                "descripcion": "La Tasa Específica de Fecundidad (TEF) en adolescentes de 15 a 19 años se representa como el cociente entre el número de nacidos vivos de adolescentes de 15 a 19 años y el número total de niñas de ese mismo grupo de edad, multiplicado por 1000. ",
+                "fuente": "Estadísticas vitales, consultadas en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "TEF (15-19 años)",
+                "limites": [
+                    50,
+                    100
+                ],
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": ""
+            }
+        ]
+    },
+    {
+        "base_de_datos": "BD_17_TEF",
+        "feature_servers": {
+            "departamentos": "11",
+            "municipios": "10",
+            "PDET": "9"
+        },
+        "anios": [
+            2008,
+            2009,
+            2010,
+            2011,
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019
+        ],
+        "variables": [
+            {
+                "value": "births_girls_10_14",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "fuente": "Estadísticas vitales, consultadas en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "No. de nacimientos (10-14 años)",
+                "limites": false,
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "number_girls_10_14",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "fuente": "Estadísticas vitales, consultadas en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "No. de niñas (10-14 años)",
+                "limites": false,
+                "rango": [
+                    false,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "tef_girls_10_14",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 1000,
+                "titulos": [
+                    "Baja fecundidad en niñas",
+                    "Media fecundidad en niñas",
+                    "Alta fecundidad en niñas"
+                ],
+                "descripciones": [
+                    "Articular mecanismos de respuesta y de prevención de la violencia sexual y el embarazo a temprana edad en niñas, especialmente en poblaciones étnicas.",
+                    "Reforzar las estrategias de identificación de casos de violencia sexual, uniones tempranas y matrimonios infantiles en niñas de 10 a 14 años, especialmente en población rural, rural dispersa, migrantes y grupos étnicos.",
+                    "Fortalecer los espacios o mecanismos intersectoriales para el abordaje integral de las violencias basadas en género desde el sector salud, justicia o protección. Promover el acceso a la Educación Integral para la Sexualidad (EIS) basada en evidencia, respetando la autonomía progresiva del niño y de la niña, de manera participativa, intercultural, con enfoque de género y de derechos humanos."
+                ],
+                "descripcion": "La Tasa Específica de Fecundidad (TEF) en niñas de 10 a 14 años se representa como el cociente entre el número de nacidos vivos de niñas de 10 a 14 años en un periodo determinado (un año) y el número total de niñas de ese mismo grupo de edad, multiplicado por 1000. La Fecundidad en niñas de 10 a 14 años es de gran interés para las acciones en términos de política pública, ya que las relaciones sexuales con menores de 14 años son consideradas delitos sexuales, y el embarazo o las infecciones de transmisión sexual asociadas son agravantes punitivos (Ley 1098 del 2006).",
+                "fuente": "Estadísticas vitales, consultadas en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "TEF (10-14 años)",
+                "limites": [
+                    5,
+                    10
+                ],
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": ""
+            }
+        ]
+    },
+    {
+        "base_de_datos": "BD_16_RMM",
+        "feature_servers": {
+            "departamentos": "12",
+            "municipios": "11",
+            "PDET": "10"
+        },
+        "anios": [
+            2005,
+            2006,
+            2007,
+            2008,
+            2009,
+            2010,
+            2011,
+            2013,
+            2014,
+            2015,
+            2016,
+            2017,
+            2018,
+            2019,
+            2020
+        ],
+        "variables": [
+            {
+                "value": "maternal_deaths",
+                "mostrarBrechas": false,
+                "brechas": [
+                    {
+                        "nombre": "Etnia",
+                        "categorias": [
+                            {
+                                "value": "indigena",
+                                "nombre": "Indigena"
+                            },
+                            {
+                                "value": "narp",
+                                "nombre": "Afro"
+                            },
+                            {
+                                "value": "ninguno",
+                                "nombre": "Ninguno"
+                            }
+                        ]
+                    },
+                    {
+                        "nombre": "Zona",
+                        "categorias": [
+                            {
+                                "value": "rural",
+                                "nombre": "Rural"
+                            },
+                            {
+                                "value": "urbano",
+                                "nombre": "Urbano"
+                            },
+                            {
+                                "value": "sin_inform",
+                                "nombre": "Sin  información"
+                            }
+                        ]
+                    }
+                ],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "Estadísticas vitales, consultadas en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "No. de muertes maternas)",
+                "limites": false,
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "live_births",
+                "mostrarBrechas": false,
+                "brechas": [
+                    {
+                        "nombre": "Etnia",
+                        "categorias": [
+                            {
+                                "value": "indigena",
+                                "nombre": "Indigena"
+                            },
+                            {
+                                "value": "narp",
+                                "nombre": "Afro"
+                            },
+                            {
+                                "value": "ninguno",
+                                "nombre": "Ninguno"
+                            }
+                        ]
+                    },
+                    {
+                        "nombre": "Zona",
+                        "categorias": [
+                            {
+                                "value": "rural",
+                                "nombre": "Rural"
+                            },
+                            {
+                                "value": "urbano",
+                                "nombre": "Urbano"
+                            },
+                            {
+                                "value": "sin_inform",
+                                "nombre": "Sin  información"
+                            }
+                        ]
+                    }
+                ],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "Estadísticas vitales, consultadas en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "No. de nacimientos vivos",
+                "limites": false,
+                "rango": [
+                    false,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "rate_cienmilhab",
+                "mostrarBrechas": true,
+                "brechas": [
+                    {
+                        "nombre": "Etnia",
+                        "categorias": [
+                            {
+                                "value": "indigena",
+                                "nombre": "Indigena"
+                            },
+                            {
+                                "value": "narp",
+                                "nombre": "NARP"
+                            },
+                            {
+                                "value": "ninguno",
+                                "nombre": "Ninguno"
+                            }
+                        ]
+                    },
+                    {
+                        "nombre": "Zona",
+                        "categorias": [
+                            {
+                                "value": "rural",
+                                "nombre": "Rural"
+                            },
+                            {
+                                "value": "urbano",
+                                "nombre": "Urbano"
+                            },
+                            {
+                                "value": "sin_inform",
+                                "nombre": "Sin  información"
+                            }
+                        ]
+                    },
+                    {
+                        "nombre": "Edad",
+                        "categorias": [
+                            {
+                                "value": "50_54_anios",
+                                "nombre": "50-54 Años"
+                            },
+                            {
+                                "value": "45_49_anios",
+                                "nombre": "45-49 Años"
+                            },
+                            {
+                                "value": "40_44_anios",
+                                "nombre": "40-44 Años"
+                            },
+                            {
+                                "value": "35_39_anios",
+                                "nombre": "35-39 Años"
+                            },
+                            {
+                                "value": "30_34_anios",
+                                "nombre": "30-34 Años"
+                            },
+                            {
+                                "value": "25_29_anios",
+                                "nombre": "25-29 Años"
+                            },
+                            {
+                                "value": "20_24_anios",
+                                "nombre": "20-24 Años"
+                            },
+                            {
+                                "value": "15_19_anios",
+                                "nombre": "15-19 Años"
+                            },
+                            {
+                                "value": "10_14_anios",
+                                "nombre": "10-14 Años"
+                            }
+                        ]
+                    }
+                ],
+                "calc": 1,
+                "titulos": [
+                    "Baja mortalidad materna",
+                    "Media mortalidad materna",
+                    "Alta mortalidad materna"
+                ],
+                "descripciones": [
+                    "Verificar subregistro en la fuente de información; es necesario gestionar y hacer seguimiento a la información reportada y registrada.",
+                    "Como principal reto, fortalecer los esfuerzos para lograr la garantía del acceso a servicios de salud para gestantes (atenciones prenatales, del parto y del puerperio, y la anticoncepción posparto).",
+                    "Incluir en las políticas públicas en salud materna acciones de gestión de riesgo relacionadas con la disponibilidad, accesibilidad, aceptabilidad, calidad y uso efectivo de los servicios de salud para la atención y el tratamiento de las eventuales complicaciones que se pueden presentar."
+                ],
+                "descripcion": "La Razón de Mortalidad Materna (RMM) es uno de los indicadores más importantes en términos de atención integral en salud materna. Representa el número de mujeres fallecidas por causas relacionadas con el embarazo y el parto por cada 100.000 nacidos vivos de acuerdo con el municipio de residencia.",
+                "fuente": "Estadísticas vitales, consultadas en bodega de datos del SISPRO, julio de 2021.",
+                "nombre": "Razón de mortalidad materna (por cien mil nacidos vivos)",
+                "limites": [
+                    50,
+                    150
+                ],
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": ""
+            }
+        ]
+    },
+    {
+        "base_de_datos": "BD_12_IMP_Fem",
+        "feature_servers": {
+            "departamentos": "5",
+            "municipios": "4",
+            "PDET": "3"
+        },
+        "anios": [
+            2018
+        ],
+        "variables": [
+            {
+                "value": "total_poor_female_headed_househ",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "CNPV 2018, DANE.",
+                "nombre": "Total de hogares pobres encabezados por mujeres",
+                "limites": false,
+                "rango": [
+                    false,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "total_people_female_headed_hous",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "CNPV 2018, DANE.",
+                "nombre": "Total de hogares encabezados por mujeres",
+                "limites": false,
+                "rango": [
+                    false,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "ipm_female_headed_households",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 100,
+                "titulos": [
+                    "IPM-F bajo",
+                    "IPM-F medio",
+                    "IPM-F alto"
+                ],
+                "descripciones": [
+                    "Tienen menores presiones en términos de reducir la desigualdad por razones de género. En todo caso, se espera que puedan promover políticas de cuidado de personas dependientes para distribuir la carga que recae sobre las mujeres, al tiempo que incentivar políticas de cambio cultural que promuevan una participación más activa, socialmente valorada y permanente de los hombres en las actividades de cuidado.",
+                    "Deben promover acciones para cualificar a las mujeres y dinamizar la oferta laboral para ellas, en relación con los horarios y lugares de trabajo. Asimismo, es deseable promover la vinculación a relaciones laborales formales. ",
+                    "Deben promover estrategias de diversificación del mercado laboral para las mujeres con horarios y locaciones flexibles, facilitar condiciones de formación técnica de mujeres cabeza de familia, y promover políticas de cuidado de niños, niñas y adolescentes, adultos mayores y personas con discapacidad, para distribuir la carga del cuidado que recae sobre las mujeres."
+                ],
+                "descripcion": "Este apartado constituye un esfuerzo por incluir el enfoque de género en el entendimiento de la pobreza. Para ello, la jefatura femenina del hogar ha sido utilizada como un indicador proxy de la feminización de la pobreza.",
+                "fuente": "CNPV 2018, DANE.",
+                "nombre": "IPM Hogares encabezados por mujeres",
+                "limites": [
+                    35,
+                    65
+                ],
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": "%"
+            }
+        ]
+    },
+    {
+        "base_de_datos": "BD_11_IPM",
+        "feature_servers": {
+            "departamentos": "3",
+            "municipios": "4",
+            "PDET": "5"
+        },
+        "anios": [
+            2018
+        ],
+        "variables": [
+            {
+                "value": "total_poor",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "CNPV 2018, DANE.",
+                "nombre": "Total de personas en situación de pobreza",
+                "limites": false,
+                "rango": [
+                    false,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "total_people",
+                "mostrarBrechas": false,
+                "brechas": [],
+                "calc": 1,
+                "titulos": [],
+                "descripciones": [],
+                "fuente": "CNPV 2018, DANE.",
+                "nombre": "Total de personas",
+                "limites": false,
+                "rango": [
+                    false,
+                    false
+                ],
+                "unidad": ""
+            },
+            {
+                "value": "ipm",
+                "mostrarBrechas": true,
+                "brechas": [],
+                "calc": 100,
+                "titulos": [
+                    "IPM bajo",
+                    "IPM medio",
+                    "IPM alto"
+                ],
+                "descripciones": [
+                    "Requieren promover el acceso a empleos de calidad que garanticen la formalidad de los trabajadores y trabajadoras y les permita adquirir capacidades en generación de ingresos, al igual que reducir las brechas de género en materia de ingreso, autonomía financiera y distribución de los recursos.",
+                    "Requieren buscar el desarrollo de las zonas rezagadas a través de proyectos e intervenciones regionales y subregionales de impacto, y del impulso a la coordinación y la asociatividad territoriales; es decir, buscar conectar territorios. ",
+                    "Tienen como desafío principal realizar inversiones en programas de mejoramiento de vivienda que conlleven una mejora de las deficiencias en la estructura y en la disponibilidad de servicios públicos domiciliarios. Requieren inversión en infraestructura educativa y acciones para mejorar el acceso a aseguramiento en salud."
+                ],
+                "descripcion": "El Índice de Pobreza Multidimensional (IPM) es la medición de la pobreza de manera directa, a través de cinco dimensiones y quince indicadores: 1. Condiciones educativas: analfabetismo y bajo logro educativo. 2. Condiciones de la niñez y juventud: inasistencia escolar, rezago escolar, barreras de acceso a servicios de cuidado de primera infancia, y trabajo infantil. 3. Trabajo: trabajo informal y desempleo de larga duración. 4. Salud: sin aseguramiento a salud y barreras de acceso a salud dada una necesidad. 5. Condiciones de la vivienda y servicios públicos: sin acceso a fuente de agua mejorada, inadecuada eliminación de excretas, material inadecuado de pisos, material inadecuado de paredes y hacinamiento crítico.",
+                "fuente": "CNPV 2018, DANE.",
+                "nombre": "IPM",
+                "limites": [
+                    35,
+                    65
+                ],
+                "rango": [
+                    0,
+                    false
+                ],
+                "unidad": "%"
+            }
+        ]
+    }
+]
