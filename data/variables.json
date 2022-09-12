@@ -6,9 +6,6 @@
             "municipios": "4",
             "PDET": "5"
         },
-        "anios": [
-            2018
-        ],
         "variables": [
             {
                 "value": "rate_illiteracy",
@@ -36,7 +33,10 @@
                     0,
                     false
                 ],
-                "unidad": "%"
+                "unidad": "%",
+                "anios": [
+                    2018
+                ]
             }
         ]
     },
@@ -47,9 +47,6 @@
             "municipios": "5",
             "PDET": "4"
         },
-        "anios": [
-            2019
-        ],
         "variables": [
             {
                 "value": "transition_net_coverage",
@@ -77,7 +74,10 @@
                     0,
                     100
                 ],
-                "unidad": "%"
+                "unidad": "%",
+                "anios": [
+                    2019
+                ]
             },
             {
                 "value": "primary_net_coverage",
@@ -105,7 +105,10 @@
                     0,
                     100
                 ],
-                "unidad": "%"
+                "unidad": "%",
+                "anios": [
+                    2019
+                ]
             },
             {
                 "value": "middle_net_coverage",
@@ -133,7 +136,10 @@
                     0,
                     100
                 ],
-                "unidad": "%"
+                "unidad": "%",
+                "anios": [
+                    2019
+                ]
             },
             {
                 "value": "secondary_net_coverage",
@@ -161,7 +167,10 @@
                     0,
                     100
                 ],
-                "unidad": "%"
+                "unidad": "%",
+                "anios": [
+                    2019
+                ]
             },
             {
                 "value": "total_net_coverage",
@@ -189,7 +198,10 @@
                     0,
                     100
                 ],
-                "unidad": "%"
+                "unidad": "%",
+                "anios": [
+                    2019
+                ]
             }
         ]
     },
@@ -200,15 +212,6 @@
             "municipios": "8",
             "PDET": "7"
         },
-        "anios": [
-            2014,
-            2015,
-            2016,
-            2017,
-            2018,
-            2019,
-            2020
-        ],
         "variables": [
             {
                 "value": "rate_total_vbg",
@@ -328,7 +331,16 @@
                     0,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019,
+                    2020
+                ]
             }
         ]
     },
@@ -339,15 +351,6 @@
             "municipios": "8",
             "PDET": "7"
         },
-        "anios": [
-            2014,
-            2015,
-            2016,
-            2017,
-            2018,
-            2019,
-            2020
-        ],
         "variables": [
             {
                 "value": "women_supply_any_contraception",
@@ -363,7 +366,16 @@
                     false,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019,
+                    2020
+                ]
             },
             {
                 "value": "total_women_15_49_afiliated_sgs",
@@ -379,7 +391,16 @@
                     false,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019,
+                    2020
+                ]
             },
             {
                 "value": "percent_women_15_49",
@@ -407,7 +428,16 @@
                     0,
                     false
                 ],
-                "unidad": "%"
+                "unidad": "%",
+                "anios": [
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019,
+                    2020
+                ]
             }
         ]
     },
@@ -418,19 +448,6 @@
             "municipios": "10",
             "PDET": "11"
         },
-        "anios": [
-            2008,
-            2009,
-            2010,
-            2011,
-            2013,
-            2014,
-            2015,
-            2016,
-            2017,
-            2018,
-            2019
-        ],
         "variables": [
             {
                 "value": "births_teenagers_15_19",
@@ -446,7 +463,20 @@
                     0,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2008,
+                    2009,
+                    2010,
+                    2011,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019
+                ]
             },
             {
                 "value": "number_teenagers_15",
@@ -462,7 +492,20 @@
                     false,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2008,
+                    2009,
+                    2010,
+                    2011,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019
+                ]
             },
             {
                 "value": "rate_tef_teenagers_15_19",
@@ -490,7 +533,20 @@
                     0,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2008,
+                    2009,
+                    2010,
+                    2011,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019
+                ]
             }
         ]
     },
@@ -501,19 +557,6 @@
             "municipios": "10",
             "PDET": "9"
         },
-        "anios": [
-            2008,
-            2009,
-            2010,
-            2011,
-            2013,
-            2014,
-            2015,
-            2016,
-            2017,
-            2018,
-            2019
-        ],
         "variables": [
             {
                 "value": "births_girls_10_14",
@@ -527,7 +570,20 @@
                     0,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2008,
+                    2009,
+                    2010,
+                    2011,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019
+                ]
             },
             {
                 "value": "number_girls_10_14",
@@ -541,7 +597,20 @@
                     false,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2008,
+                    2009,
+                    2010,
+                    2011,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019
+                ]
             },
             {
                 "value": "tef_girls_10_14",
@@ -569,7 +638,20 @@
                     0,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2008,
+                    2009,
+                    2010,
+                    2011,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019
+                ]
             }
         ]
     },
@@ -580,23 +662,6 @@
             "municipios": "11",
             "PDET": "10"
         },
-        "anios": [
-            2005,
-            2006,
-            2007,
-            2008,
-            2009,
-            2010,
-            2011,
-            2013,
-            2014,
-            2015,
-            2016,
-            2017,
-            2018,
-            2019,
-            2020
-        ],
         "variables": [
             {
                 "value": "maternal_deaths",
@@ -647,7 +712,24 @@
                     0,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2005,
+                    2006,
+                    2007,
+                    2008,
+                    2009,
+                    2010,
+                    2011,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019,
+                    2020
+                ]
             },
             {
                 "value": "live_births",
@@ -698,7 +780,24 @@
                     false,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2005,
+                    2006,
+                    2007,
+                    2008,
+                    2009,
+                    2010,
+                    2011,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019,
+                    2020
+                ]
             },
             {
                 "value": "rate_cienmilhab",
@@ -802,7 +901,24 @@
                     0,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2005,
+                    2006,
+                    2007,
+                    2008,
+                    2009,
+                    2010,
+                    2011,
+                    2013,
+                    2014,
+                    2015,
+                    2016,
+                    2017,
+                    2018,
+                    2019,
+                    2020
+                ]
             }
         ]
     },
@@ -813,9 +929,6 @@
             "municipios": "4",
             "PDET": "3"
         },
-        "anios": [
-            2018
-        ],
         "variables": [
             {
                 "value": "total_poor_female_headed_househ",
@@ -831,7 +944,10 @@
                     false,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2018
+                ]
             },
             {
                 "value": "total_people_female_headed_hous",
@@ -847,7 +963,10 @@
                     false,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2018
+                ]
             },
             {
                 "value": "ipm_female_headed_households",
@@ -875,7 +994,10 @@
                     0,
                     false
                 ],
-                "unidad": "%"
+                "unidad": "%",
+                "anios": [
+                    2018
+                ]
             }
         ]
     },
@@ -886,9 +1008,6 @@
             "municipios": "4",
             "PDET": "5"
         },
-        "anios": [
-            2018
-        ],
         "variables": [
             {
                 "value": "total_poor",
@@ -904,7 +1023,10 @@
                     false,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2018
+                ]
             },
             {
                 "value": "total_people",
@@ -920,7 +1042,10 @@
                     false,
                     false
                 ],
-                "unidad": ""
+                "unidad": "",
+                "anios": [
+                    2018
+                ]
             },
             {
                 "value": "ipm",
@@ -948,7 +1073,10 @@
                     0,
                     false
                 ],
-                "unidad": "%"
+                "unidad": "%",
+                "anios": [
+                    2018
+                ]
             }
         ]
     }

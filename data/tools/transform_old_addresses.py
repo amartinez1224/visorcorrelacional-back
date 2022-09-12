@@ -32,13 +32,13 @@ def databases_new_format(databases):
             'municipios': last_number(databases[db]['mun']['a']),
             'PDET': last_number(databases[db]['PDET']['a']),
             }
-        variable['anios'] = databases[db]['dept']['years']
         variable['variables'] = databases[db]['dept']['fields']
         for var in variable['variables']:
             var['nombre'] = var.pop('name', None)
             var['limites'] = var.pop('limits', None)
             var['rango'] = var.pop('range', None)
             var['unidad'] = var.pop('unit', None)
+            var['anios'] = databases[db]['dept']['years']
         variables.append(variable)
     return variables
     
