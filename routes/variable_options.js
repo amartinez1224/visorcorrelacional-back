@@ -89,6 +89,16 @@ router.get('/iniciales/coordenadas_paralelas', (req, res) => {
   res.send(iniciales.coordenadas_paralelas);
 });
 
+router.get('/:bd/:value', (req, res) => {
+  const { bd, value } = req.params;
+  const variable = variables.find((item) => item.bd === bd && item.value === value);
+  if (variable) {
+    res.send(variable);
+  } else {
+    res.status(404).send(`Variable ${value} - ${bd} no encontrada.`);
+  }
+});
+
 module.exports = {
   router, cargarVariables,
 };
