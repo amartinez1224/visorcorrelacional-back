@@ -1,0 +1,19 @@
+{
+    "brechas": {
+        "region": {"divipola": "00000"},
+        "variable": {"anio": 2020, "value": "rate_cienmilhab", "bd": "BD_16_RMM"}
+    },
+    "Coordenadas_paralelas": {
+        "regiones": [
+            {"divipola": "76000"},
+            {"divipola": "76109"},
+            {"divipola": "19000"},
+            {"divipola": "19698"}
+        ],
+        "variables": [
+            {"anio": 2019, "value": "total_net_coverage", "bd": "BD_25_CNE"},
+            {"anio": 2018, "value": "rate_illiteracy", "bd": "BD_28_ANA"},
+            {"anio": 2018, "value": "ipm", "bd": "BD_11_IPM"}
+        ]
+    }
+}
