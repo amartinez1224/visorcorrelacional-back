@@ -93,11 +93,11 @@ router.get('/divipola/:divipola', (req, res) => {
   const { lista, tipo, div } = obtenerTipoPorDivipola(divipola);
   console.log(divipola, tipo);
   if (lista === null) {
-    res.sendStatus(404);
+    res.status(404).send(`Divipola ${div} no encontrada.`);
   } else {
     const region = lista.find((item) => item.divipola === div);
     if (region === undefined) {
-      res.sendStatus(404);
+      res.status(404).send(`Divipola ${div} no encontrada.`);
     } else {
       res.send({ region, tipo });
     }
