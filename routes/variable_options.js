@@ -21,10 +21,13 @@ function cargarDatosIniciales() {
 
 function listarVariables() {
   dbs.forEach((bd) => {
+    const anios = new Set();
     bd.variables.forEach((variable) => {
       const temp = variable;
       temp.bd = bd.base_de_datos;
+      anios.add(...variable.anios);
     });
+    bd.anios = anios;
     variables.push(...bd.variables);
   });
 }
@@ -99,6 +102,14 @@ router.get('/:bd/:value', (req, res) => {
   }
 });
 
+function getVariables() {
+  return variables;
+}
+
+function getDbs() {
+  return dbs;
+}
+
 module.exports = {
-  router, cargarVariables,
+  router, cargarVariables, getVariables, getDbs,
 };

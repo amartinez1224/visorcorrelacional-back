@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const { router: regiones, cargarRegiones } = require('./routes/region_options');
 const { router: variables, cargarVariables } = require('./routes/variable_options');
+const { router: data } = require('./routes/get_data');
 
 const port = process.env.PORT || 8080;
 
@@ -13,6 +14,8 @@ app.use('/obtener/regiones', regiones);
 
 cargarVariables();
 app.use('/obtener/variables', variables);
+
+app.use('/data/', data);
 
 app.get('/', (req, res) => {
   res.send('Back is on.');
