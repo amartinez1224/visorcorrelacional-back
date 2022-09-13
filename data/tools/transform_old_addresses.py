@@ -2,11 +2,15 @@ from json import dump, load
 from os import path
 
 def read_addresses(filename):
+    '''Lee un archivo JSON y devuelve un diccionario que representa los datos del archivo.'''
+    
     with open(filename, 'r', encoding='utf-8') as f:
         data = load(f)
         return data
 
 def segment_databases(data):
+    '''Segmenta los datos por bases de datos.'''
+    
     databases = {}
     for entry in data['direcciones']:
         db = entry['n']
@@ -15,6 +19,8 @@ def segment_databases(data):
     return databases
 
 def last_number(text):
+    '''Devuelve el último número (Feature Server) de una URL.'''
+    
     last = "0"
     try:
         last = text.split('/')[-2]
@@ -23,6 +29,8 @@ def last_number(text):
     return last
 
 def databases_new_format(databases):
+    '''Transforma los datos para que se ajusten a la estructura de los nuevos archivos.'''
+    
     variables = []
     for db in databases:
         variable = {}
@@ -43,6 +51,8 @@ def databases_new_format(databases):
     return variables
     
 def save_json(data, filename):
+    '''Guarda los datos en un archivo JSON.'''
+    
     with open(filename, 'w', encoding='utf-8') as f:
         dump(data, f, ensure_ascii=False, indent=4)
   

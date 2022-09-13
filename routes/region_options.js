@@ -8,6 +8,9 @@ let municipios = [];
 let regionesPDET = [];
 let totales = [];
 
+/**
+ * Carga los departamentos del archivo departamentos.json en la variable departamentos.
+ */
 function cargarDepartamentos() {
   fs.readFile('./data/departamentos.json', (err, data) => {
     if (err) throw err;
@@ -15,6 +18,9 @@ function cargarDepartamentos() {
   });
 }
 
+/**
+ * Carga los municipios del archivo municipios.json en la variable municipios.
+ */
 function cargarMunicipios() {
   fs.readFile('./data/municipios.json', (err, data) => {
     if (err) throw err;
@@ -22,6 +28,9 @@ function cargarMunicipios() {
   });
 }
 
+/**
+ * Carga las regiones PDET del archivo regionesPDET.json en la variable regionesPDET.
+*/
 function cargarRegionesPDET() {
   fs.readFile('./data/regionesPDET.json', (err, data) => {
     if (err) throw err;
@@ -29,6 +38,9 @@ function cargarRegionesPDET() {
   });
 }
 
+/**
+ * Carga las regiones totales del archivo totales.json en la variable totales.
+*/
 function cargarTotales() {
   fs.readFile('./data/totales.json', (err, data) => {
     if (err) throw err;
@@ -36,6 +48,10 @@ function cargarTotales() {
   });
 }
 
+/**
+ * Ejecuta en orden las funciones cargarDepartamentos, cargarMunicipios,
+ * cargarRegionesPDET y cargarTotales.
+*/
 function cargarRegiones() {
   cargarDepartamentos();
   cargarMunicipios();
@@ -67,6 +83,13 @@ router.get('/regionesPDET', (req, res) => {
   res.send(regionesPDET.concat(totales));
 });
 
+/**
+ * Clasifica una divipola en un tipo de region departamento, municipio o región PDET.
+ * @param {string} divipola string de 5 o 2 caracteres que representa la divipola.
+ * @returns { { lista: [object], tipo: string, div: string } } Un objeto con la variable donde se
+ * encuentra la region, el tipo de region y la divipola en fromato de 5 digitos (con ceros a la
+ * izquierda). Un objeto con valores null si no se encuentra la region.
+ */
 function obtenerTipoPorDivipola(divipola) {
   let div = divipola;
   if (div.length === 2) {
@@ -85,13 +108,12 @@ function obtenerTipoPorDivipola(divipola) {
     }
     return { lista: municipios, tipo: 'municipio', div };
   }
-  return { lista: null, tipo: null, divipola };
+  return { lista: null, tipo: null, div: divipola };
 }
 
 router.get('/divipola/:divipola', (req, res) => {
   const { divipola } = req.params;
   const { lista, tipo, div } = obtenerTipoPorDivipola(divipola);
-  console.log(divipola, tipo);
   if (lista === null) {
     res.status(404).send(`Divipola ${div} no encontrada.`);
   } else {

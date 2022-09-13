@@ -5,7 +5,16 @@ const router = express.Router();
 const urlArcGIS = process.env.ARCGIS_URL || '';
 const tokenArcGIS = process.env.ARCGIS_TOKEN || '';
 
-function construirUrlArcGIS(bd, servidor, anio = false, departamento = false) {
+/**
+ * Construye una URL para hacer una petición a ArcGIS.
+ * @param {string} bd Nombre de la base de datos.
+ * @param {int} servidor Numero del Feature Server de ArcGIS.
+ * @param {int} anio Año de los datos. Si no se especifica busca todos los años disponibles.
+ * @param {string} departamento Departamento de los datos. Si no se especifica no filtra por
+ * departamento.
+ * @returns Una URL para hacer una petición a ArcGIS.
+ */
+function construirUrlArcGIS(bd, servidor, anio = '', departamento = '') {
   let where = '1%3D1';
   if (anio && departamento) {
     where = `anio+%3D+${anio}+AND+divipola+LIKE+%27${departamento}%25%27`;
@@ -19,6 +28,14 @@ function construirUrlArcGIS(bd, servidor, anio = false, departamento = false) {
   return url;
 }
 
+/**
+ * Obtiene los datos de una base de datos de ArcGIS.
+ * @param {string} bd Nombre de la base de datos.
+ * @param {int} anio Año de los datos.
+ * @param {string} departamento Departamento por el que se filtran los datos municipales.
+ * @returns Un arreglo con los datos de la base de datos.
+ * Un arreglo vacío si no se encuentran datos.
+*/
 async function obtenerDatos(bd, anio, tipo, departamento = '00') {
   const servidor = bd.feature_servers[tipo];
   const nombreBd = bd.base_de_datos;

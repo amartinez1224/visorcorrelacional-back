@@ -7,11 +7,18 @@ const variables = [];
 let iniciales = [];
 let dbs = [];
 
+/**
+ * Carga las variables disponibles agrupadas por base de datos del
+ * archivo variables.json en la variable dbs.
+ */
 function cargarDbs() {
   const data = fs.readFileSync('./data/variables.json');
   dbs = JSON.parse(data);
 }
 
+/**
+ * Carga los datos iniciales del archivo iniciales.json en la variable iniciales.
+*/
 function cargarDatosIniciales() {
   fs.readFile('./data/config_inicial.json', (err, data) => {
     if (err) throw err;
@@ -19,6 +26,9 @@ function cargarDatosIniciales() {
   });
 }
 
+/**
+ * Lista las variables agrupadas en dbs.
+*/
 function listarVariables() {
   dbs.forEach((bd) => {
     const anios = new Set();
@@ -32,6 +42,9 @@ function listarVariables() {
   });
 }
 
+/**
+ * Ejecuta en orden las funciones cargarVariables, cargarDbs y listarVariables.
+*/
 function cargarVariables() {
   cargarDatosIniciales();
   cargarDbs();
@@ -102,10 +115,18 @@ router.get('/:bd/:value', (req, res) => {
   }
 });
 
+/**
+ * Permite obtener la lista de variables disponibles.
+ * @returns {Array} Lista de variables.
+ */
 function getVariables() {
   return variables;
 }
 
+/**
+ * Permite obtener la lista de bases de datos disponibles.
+ * @returns {Array} Lista de bases de datos.
+ */
 function getDbs() {
   return dbs;
 }
