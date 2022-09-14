@@ -1,8 +1,9 @@
 const express = require('express');
 const cors = require('cors');
-const { router: regiones, cargarRegiones } = require('./routes/region_options');
-const { router: variables, cargarVariables } = require('./routes/variable_options');
+const { router: regiones } = require('./routes/region_options');
+const { router: variables } = require('./routes/variable_options');
 const { router: data } = require('./routes/get_data');
+const { cargarVariables, cargarRegiones } = require('./utils/load_config');
 
 const port = process.env.PORT || 8080;
 

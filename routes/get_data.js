@@ -1,5 +1,5 @@
 const express = require('express');
-const { getDbs, getCasosEspeciales } = require('./variable_options');
+const { getDbs, getCasosEspeciales } = require('../utils/load_config');
 
 const router = express.Router();
 const urlArcGIS = process.env.ARCGIS_URL || '';
