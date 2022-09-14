@@ -6,6 +6,7 @@ const router = express.Router();
 const variables = [];
 let iniciales = [];
 let dbs = [];
+let casosEspeciales = {};
 
 /**
  * Carga las variables disponibles agrupadas por base de datos del
@@ -14,6 +15,16 @@ let dbs = [];
 function cargarDbs() {
   const data = fs.readFileSync('./data/variables.json');
   dbs = JSON.parse(data);
+}
+
+/**
+ * Carga los casos especiales del archivo casos_especiales.json en la variable casosEspeciales.
+*/
+function cargarCasosEspeciales() {
+  fs.readFile('./data/casos_especiales.json', (err, data) => {
+    if (err) throw err;
+    casosEspeciales = JSON.parse(data);
+  });
 }
 
 /**
@@ -35,7 +46,7 @@ function listarVariables() {
     bd.variables.forEach((variable) => {
       const temp = variable;
       temp.bd = bd.base_de_datos;
-      anios.add(...variable.anios);
+      variable.anios.forEach(anios.add, anios);
     });
     bd.anios = anios;
     variables.push(...bd.variables);
@@ -47,6 +58,7 @@ function listarVariables() {
 */
 function cargarVariables() {
   cargarDatosIniciales();
+  cargarCasosEspeciales();
   cargarDbs();
   listarVariables();
 }
@@ -131,6 +143,18 @@ function getDbs() {
   return dbs;
 }
 
+/**
+ * Permite obtener los casos especiales disponibles.
+ * @returns {{ cambiar_columna: Array,
+ * local: Array,
+ * modificar_busqueda_anio: Array,
+ * saltar_busqueda_anio: Array,
+ * modificar_busqueda_divipola: Array}} Casos especiales.
+*/
+function getCasosEspeciales() {
+  return casosEspeciales;
+}
+
 module.exports = {
-  router, cargarVariables, getVariables, getDbs,
+  router, cargarVariables, getVariables, getDbs, getCasosEspeciales,
 };

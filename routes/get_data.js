@@ -1,5 +1,5 @@
 const express = require('express');
-const { getDbs } = require('./variable_options');
+const { getDbs, getCasosEspeciales } = require('./variable_options');
 
 const router = express.Router();
 const urlArcGIS = process.env.ARCGIS_URL || '';
@@ -12,19 +12,29 @@ const tokenArcGIS = process.env.ARCGIS_TOKEN || '';
  * @param {int} anio Año de los datos. Si no se especifica busca todos los años disponibles.
  * @param {string} departamento Departamento de los datos. Si no se especifica no filtra por
  * departamento.
- * @returns Una URL para hacer una petición a ArcGIS.
+ * @param {string} anioKey Nombre del campo que contiene el año. Por defecto es 'ANIO'.
+ * @param {string} departamentoKey Nombre del campo que contiene el departamento. Por defecto es
+ * 'DEPARTAMENTO'.
+ * @param {Array<{columna: string, alias: string}>} aliasColumnas Arreglo de objetos con los nombres
+ * de las columnas y sus alias. Por defecto es un arreglo vacío.
+ * @returns Una URL para hacer una petición de datos a ArcGIS.
  */
-function construirUrlArcGIS(bd, servidor, anio = '', departamento = '') {
+function construirUrlArcGIS(bd, servidor, anio = '', departamento = '', anioKey = 'anio', divipolaKey = 'divipola', aliasColumnas = []) {
   let where = '1%3D1';
   if (anio && departamento) {
-    where = `anio+%3D+${anio}+AND+divipola+LIKE+%27${departamento}%25%27`;
+    where = `${anioKey}+%3D+${anio}+AND+${divipolaKey}+LIKE+%27${departamento}%25%27`;
   } else if (anio) {
-    where = `anio+%3D+${anio}`;
+    where = `${anioKey}+%3D+${anio}`;
   } else if (departamento) {
-    where = `divipola+LIKE+%27${departamento}%25%27`;
+    where = `${divipolaKey}+LIKE+%27${departamento}%25%27`;
   }
 
-  const url = `${urlArcGIS}/${bd}/FeatureServer/${servidor}/query?where=${where}&outFields=*&outSR=4326&f=json&token=${tokenArcGIS}`;
+  let alias = '';
+  aliasColumnas.forEach((columna) => {
+    alias += `%2C+${columna.columna}+AS+${columna.alias}`;
+  });
+
+  const url = `${urlArcGIS}/${bd}/FeatureServer/${servidor}/query?where=${where}&outFields=*${alias}&outSR=4326&f=json&token=${tokenArcGIS}`;
   return url;
 }
 
@@ -32,19 +42,17 @@ function construirUrlArcGIS(bd, servidor, anio = '', departamento = '') {
  * Obtiene los datos de una base de datos de ArcGIS.
  * @param {string} bd Nombre de la base de datos.
  * @param {int} anio Año de los datos.
- * @param {string} departamento Departamento por el que se filtran los datos municipales.
+ * @param {Array<>} extraArgs Arreglo con los argumentos extra que se le pasan a la función
+ * construirUrlArcGIS. Por defecto es un arreglo vacío. Se usa para manejar casos especiales.
  * @returns Un arreglo con los datos de la base de datos.
  * Un arreglo vacío si no se encuentran datos.
 */
-async function obtenerDatos(bd, anio, tipo, departamento = '00') {
+async function obtenerDatosArcGIS(bd, anio, tipo, extraArgs = []) {
   const servidor = bd.feature_servers[tipo];
   const nombreBd = bd.base_de_datos;
   let url = '';
-  if (tipo === 'municipios') {
-    url = construirUrlArcGIS(nombreBd, servidor, anio, departamento);
-  } else {
-    url = construirUrlArcGIS(nombreBd, servidor, anio);
-  }
+  url = construirUrlArcGIS(nombreBd, servidor, ...extraArgs);
+
   let data = [];
   await fetch(url)
     .then((res) => res.json())
@@ -55,6 +63,69 @@ async function obtenerDatos(bd, anio, tipo, departamento = '00') {
     .catch((err) => {
       console.log(err);
     });
+  return data;
+}
+
+/**
+ * Busca casos especiales y btiene los datos solicitados de ArcGIS o locales.
+ * @param {string} bd Nombre de la base de datos.
+ * @param {int} anio Año de los datos.
+ * @param {string} tipo Tipo de datos. Puede ser 'departamentos', 'municipios' o 'regionesPDET'.
+ * @param {string} departamento Divipola de dos digitos por el que se filtran los datos
+ * municipales. Por defecto es un string vacío.
+ * @returns Un arreglo con los datos de la base de datos.
+ * Un arreglo vacío si no se encuentran datos.
+*/
+async function obtenerDatos(bd, anio, tipo, departamento = '') {
+  const casosEspeciales = getCasosEspeciales();
+  const local = casosEspeciales.local.find(
+    (item) => item.base_de_datos === bd.base_de_datos
+    && item.region === tipo
+    && item.anios.includes(anio),
+  );
+  const cambiarColumna = casosEspeciales.cambiar_columna.find(
+    (item) => item.base_de_datos === bd.base_de_datos
+    && item.region === tipo
+    && item.anios.includes(anio),
+  );
+  const modificarBusquedaAnio = casosEspeciales.modificar_busqueda_anio.find(
+    (item) => item.base_de_datos === bd.base_de_datos
+    && item.region === tipo
+    && item.anios.includes(anio),
+  );
+  const modificarBusquedaDivipola = casosEspeciales.modificar_busqueda_divipola.find(
+    (item) => item.base_de_datos === bd.base_de_datos
+    && item.region === tipo
+    && item.anios.includes(anio),
+  );
+  const saltarBusquedaAnio = casosEspeciales.saltar_busqueda_anio.find(
+    (item) => item.base_de_datos === bd.base_de_datos
+    && item.region === tipo,
+  );
+
+  const extraArgs = new Array(5).fill(undefined);
+  if (!saltarBusquedaAnio) {
+    extraArgs[0] = anio;
+  }
+  if (departamento) {
+    extraArgs[1] = departamento;
+  }
+  if (modificarBusquedaAnio) {
+    extraArgs[2] = modificarBusquedaAnio.anio;
+  }
+  if (modificarBusquedaDivipola) {
+    extraArgs[3] = modificarBusquedaDivipola.divipola;
+  }
+  if (cambiarColumna) {
+    extraArgs[4] = cambiarColumna.columnas;
+  }
+
+  if (local) {
+    // TODO: Obtener datos locales.
+    const data = [];
+    return data;
+  }
+  const data = await obtenerDatosArcGIS(bd, anio, tipo, extraArgs);
   return data;
 }
 
