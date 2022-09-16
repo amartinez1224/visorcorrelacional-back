@@ -38,7 +38,7 @@ def databases_new_format(databases):
         variable['feature_servers'] = {
             'departamentos': last_number(databases[db]['dept']['a']),
             'municipios': last_number(databases[db]['mun']['a']),
-            'PDET': last_number(databases[db]['PDET']['a']),
+            'regionesPDET': last_number(databases[db]['PDET']['a']),
             }
         variable['variables'] = databases[db]['dept']['fields']
         for var in variable['variables']:

@@ -4,7 +4,7 @@
         "feature_servers": {
             "departamentos": "3",
             "municipios": "4",
-            "PDET": "5"
+            "regionesPDET": "5"
         },
         "variables": [
             {
@@ -45,7 +45,7 @@
         "feature_servers": {
             "departamentos": "3",
             "municipios": "5",
-            "PDET": "4"
+            "regionesPDET": "4"
         },
         "variables": [
             {
@@ -210,7 +210,7 @@
         "feature_servers": {
             "departamentos": "9",
             "municipios": "8",
-            "PDET": "7"
+            "regionesPDET": "7"
         },
         "variables": [
             {
@@ -349,7 +349,7 @@
         "feature_servers": {
             "departamentos": "9",
             "municipios": "8",
-            "PDET": "7"
+            "regionesPDET": "7"
         },
         "variables": [
             {
@@ -446,7 +446,7 @@
         "feature_servers": {
             "departamentos": "9",
             "municipios": "10",
-            "PDET": "11"
+            "regionesPDET": "11"
         },
         "variables": [
             {
@@ -555,7 +555,7 @@
         "feature_servers": {
             "departamentos": "11",
             "municipios": "10",
-            "PDET": "9"
+            "regionesPDET": "9"
         },
         "variables": [
             {
@@ -660,7 +660,7 @@
         "feature_servers": {
             "departamentos": "12",
             "municipios": "11",
-            "PDET": "10"
+            "regionesPDET": "10"
         },
         "variables": [
             {
@@ -927,7 +927,7 @@
         "feature_servers": {
             "departamentos": "5",
             "municipios": "4",
-            "PDET": "3"
+            "regionesPDET": "3"
         },
         "variables": [
             {
@@ -1006,7 +1006,7 @@
         "feature_servers": {
             "departamentos": "3",
             "municipios": "4",
-            "PDET": "5"
+            "regionesPDET": "5"
         },
         "variables": [
             {
