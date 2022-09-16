@@ -1,5 +1,5 @@
 const express = require('express');
-const { getDbs, getCasosEspeciales } = require('../utils/load_config');
+const { getDbs, getCasosEspeciales, getDatos } = require('../utils/load_config');
 
 const router = express.Router();
 const urlArcGIS = process.env.ARCGIS_URL || '';
@@ -41,13 +41,12 @@ function construirUrlArcGIS(bd, servidor, anio = '', departamento = '', anioKey 
 /**
  * Obtiene los datos de una base de datos de ArcGIS.
  * @param {string} bd Nombre de la base de datos.
- * @param {int} anio Año de los datos.
  * @param {Array<>} extraArgs Arreglo con los argumentos extra que se le pasan a la función
  * construirUrlArcGIS. Por defecto es un arreglo vacío. Se usa para manejar casos especiales.
  * @returns Un arreglo con los datos de la base de datos.
  * Un arreglo vacío si no se encuentran datos.
 */
-async function obtenerDatosArcGIS(bd, anio, tipo, extraArgs = []) {
+async function obtenerDatosArcGIS(bd, tipo, extraArgs = []) {
   const servidor = bd.feature_servers[tipo];
   const nombreBd = bd.base_de_datos;
   let url = '';
@@ -64,6 +63,31 @@ async function obtenerDatosArcGIS(bd, anio, tipo, extraArgs = []) {
       console.log(err);
     });
   return data;
+}
+
+/**
+ * Obtiene los datos de los archivos locales.
+ * @param {string} bd Nombre de la base de datos.
+ * @param {string} tipo Tipo de datos.
+ * @returns Un arreglo con los datos de la base de datos.
+ * Un arreglo vacío si no se encuentran datos.
+*/
+function obtenerDatosLocales(bd, tipo, extraArgs = []) {
+  const nombreBd = bd.base_de_datos;
+  const anio = extraArgs[0];
+  const departamento = extraArgs[1];
+  const datosBd = getDatos(nombreBd, tipo);
+
+  if (anio && departamento) {
+    return datosBd.filter((item) => item.anio === anio && item.divipola.startsWith(departamento));
+  }
+  if (anio) {
+    return datosBd.filter((item) => item.anio === anio);
+  }
+  if (departamento) {
+    return datosBd.filter((item) => item.divipola.startsWith(departamento));
+  }
+  return datosBd;
 }
 
 /**
@@ -121,11 +145,10 @@ async function obtenerDatos(bd, anio, tipo, departamento = '') {
   }
 
   if (local) {
-    // TODO: Obtener datos locales.
-    const data = [];
+    const data = obtenerDatosLocales(bd, tipo, extraArgs);
     return data;
   }
-  const data = await obtenerDatosArcGIS(bd, anio, tipo, extraArgs);
+  const data = await obtenerDatosArcGIS(bd, tipo, extraArgs);
   return data;
 }
 
@@ -185,7 +208,7 @@ router.get('/regionesPDET/:bd/:anio', async (req, res) => {
     if (Number.isNaN(anioInt)) {
       res.status(400).send('El año debe ser un número.');
     } else if (db.anios.has(anioInt)) {
-      const datos = await obtenerDatos(db, anioInt, 'PDET');
+      const datos = await obtenerDatos(db, anioInt, 'regionesPDET');
       res.send(datos);
     } else {
       res.status(404).send(`No se encontró el año ${anio} en la base de datos ${bd}.`);

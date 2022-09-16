@@ -3,14 +3,22 @@ const fs = require('fs');
 // VARIABLES
 
 const variables = [];
-let iniciales = {};
+let iniciales = { coordenadas_paralelas: {}, brechas: {} };
 let dbs = [];
-let casosEspeciales = {};
+let casosEspeciales = {
+  cambiar_columna: [],
+  local: [],
+  modificar_busqueda_anio: [],
+  saltar_busqueda_anio: [],
+  modificar_busqueda_divipola: [],
+};
 
 let departamentos = [];
 let municipios = [];
 let regionesPDET = [];
 let totales = [];
+
+const dbsLocales = {};
 
 // CARGAR VARIABLES, DATOS INICIALES Y CASOS ESPECIALES
 
@@ -24,16 +32,33 @@ function cargarDbs() {
 }
 
 /**
- * Carga los casos especiales del archivo casos_especiales.json en la variable casosEspeciales.
+ * Carga los datos de los archivos json especificado en los casos especiales en la variable dbs.
+*/
+function cargarDatosLocales() {
+  const casos = casosEspeciales.local;
+  casos.forEach((caso) => {
+    fs.readFile(`./data/especiales/${caso.archivo}`, (err, data) => {
+      if (err) throw err;
+      if (dbsLocales[caso.base_de_datos]) {
+        dbsLocales[caso.base_de_datos][caso.region] = JSON.parse(data);
+      } else {
+        dbsLocales[caso.base_de_datos] = { [caso.region]: JSON.parse(data) };
+      }
+    });
+  });
+}
+
+/**
+ * Carga los casos especiales del archivo casos_especiales.json en la variable casosEspeciales y
+ * carga los datos locales/especiales.
 */
 function cargarCasosEspeciales() {
   fs.readFile('./data/casos_especiales.json', (err, data) => {
     if (err) throw err;
     casosEspeciales = JSON.parse(data);
+    cargarDatosLocales();
   });
 }
-
-// CARGAR REGIONES
 
 /**
  * Carga las regiones y variables iniciales a mostrarse en cada gráfica del archivo iniciales.json
@@ -61,6 +86,8 @@ function listarVariables() {
     variables.push(...bd.variables);
   });
 }
+
+// CARGAR REGIONES
 
 /**
  * Carga los departamentos del archivo departamentos.json en la variable departamentos.
@@ -166,6 +193,20 @@ function getCasosEspeciales() {
 }
 
 /**
+ * Permite obtener los datos de la bd y region especificada.
+ * @param {string} bd Nombre de la base de datos.
+ * @param {string} region Nombre de la region.
+ * @returns {Array} Datos de la bd y region especificada. Si no se encuentra la bd o la region
+ * retorna una lista vacia.
+*/
+function getDatos(bd, region) {
+  if (dbsLocales[bd] && dbsLocales[bd][region]) {
+    return dbsLocales[bd][region].map((item) => item.attributes);
+  }
+  return [];
+}
+
+/**
  * Permite obtener la lista de departamentos disponibles.
  * @returns {Array} Lista de departamentos.
 */
@@ -210,4 +251,6 @@ module.exports = {
   getMunicipios,
   getRegionesPDET,
   getTotales,
+  cargarDatosLocales,
+  getDatos,
 };
